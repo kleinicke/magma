@@ -7,7 +7,7 @@ from pathlib import Path
 import uuid
 
 
-def load_config(path, config_dir=Path("configs")):
+def load_config(path, config_dir=Path("magma")):
     if not path.endswith(".yml"):
         path += ".yml"
     if not os.path.exists(path):
