@@ -3,7 +3,7 @@ from os.path import exists
 import torch
 import torch.nn as nn
 from copy import deepcopy
-from typing import Literal, Optional, List
+from typing import Optional, List
 from torchtyping import TensorType
 from transformers.file_utils import ModelOutput
 from magma.config import MultimodalConfig
@@ -102,8 +102,8 @@ class Magma(nn.Module):
     def add_adapters(
         self,
         downsample_factor: int = 4,
-        adapter_type: Literal["normal", "parallel", "scaled_parallel"] = "normal",
-        location: Literal["mlp", "attention"] = "mlp",
+        adapter_type: str = "normal",
+        location: str = "mlp",
         ff_attr: str = "mlp",
         attn_attr: str = "attn",
         **adapter_kwargs,
